@@ -261,7 +261,7 @@ function Packages(){
 // === قصص النجاح ===
 function SuccessStories({setActive}){
   const stories=[
-    {flag:"🇮🇶",name:"متدرب مرتضى من العراق",text:"بدأ بمبلغ 21$ وخلال 27 يوم وصل إلى 3,000$ وسحب 2 مليون دينار عراقي",highlight:"21$ → 3,000$",video:"/videos/success-murtaza.MP4"},
+    {flag:"🇮🇶",name:"متدرب مرتضى من العراق",text:"بدأ بمبلغ 21,000$ وخلال 27 يوم وصل إلى 3,000$ وسحب 2 مليون دينار عراقي",highlight:"21,000$ → 3,000$",video:"/videos/success-murtaza.MP4"},
     {flag:"🏅",name:"مدرب في مشروع X",text:"قبل ما يدخل معي كان خسران 20,000$ والآن حقق 400,000$ خلال 30 يوم فقط!",highlight:"20K$ → 400K$",video:"/videos/success-projectx-trainer.MP4"},
     {flag:"🎓",name:"قصة نجاح حليمة",text:"تجمعات مع المتدربين وأخذ تعليمات وأسرار تساعدهم في مجال التداول والأسواق المالية",highlight:"تدريب حي",video:"/videos/success-halima.MP4"},
   ];
