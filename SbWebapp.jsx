@@ -63,13 +63,14 @@ function Nav({active,setActive}){
 }
 
 // === Hero ===
-function Hero({setActive}){return(<section style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"100px 24px 60px",position:"relative"}}>
+function Hero({setActive}){const[showModal,setShowModal]=useState(false);return(<section style={{minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"100px 24px 60px",position:"relative"}}>{showModal&&<BookingModal onClose={()=>setShowModal(false)}/>}
   <FadeIn style={{width:"100%",maxWidth:900,marginBottom:40}}><div style={{borderRadius:24,overflow:"hidden",border:"1px solid rgba(232,97,140,0.2)",boxShadow:"0 20px 80px rgba(232,97,140,0.08)"}}><img src="/images/hero-banner.jpg" alt="كوتش الاء محمد" style={{width:"100%",display:"block"}} onError={(e)=>{e.target.parentElement.parentElement.style.display="none";}}/></div></FadeIn>
   <FadeIn><div style={{width:180,height:180,borderRadius:"50%",overflow:"hidden",border:"4px solid rgba(232,97,140,0.4)",boxShadow:"0 0 60px rgba(232,97,140,0.12), 0 0 120px rgba(232,97,140,0.05)",margin:"0 auto 32px",background:"linear-gradient(135deg, rgba(232,97,140,0.1), rgba(255,255,255,0.9))",position:"relative"}}><img src="/images/coach-profile.jpg" alt="كوتش الاء محمد" style={{width:"110%",height:"110%",objectFit:"cover",display:"block",position:"absolute",top:"50%",left:"50%",transform:"translate(-50%, -50%)"}} onError={(e)=>{e.target.style.display="none";}}/><div style={{position:"absolute",inset:-4,borderRadius:"50%",border:"2px solid transparent",borderTopColor:"#e8618c",borderBottomColor:"#e8618c",animation:"spinRing 8s linear infinite",pointerEvents:"none"}}/></div></FadeIn>
   <div style={{textAlign:"center",maxWidth:800,position:"relative",zIndex:1,width:"100%",boxSizing:"border-box"}}>
     <FadeIn delay={0.05}><Badge>✦ مدربة معتمدة بالأسواق المالية وريادة الأعمال</Badge></FadeIn>
     <FadeIn delay={0.15}><h1 style={{fontSize:"clamp(36px, 7vw, 64px)",fontWeight:900,lineHeight:1.15,margin:"24px 0 0",fontFamily:"'Tajawal', sans-serif",background:"linear-gradient(135deg, #1a1a2e 0%, #e8618c 50%, #1a1a2e 100%)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundSize:"200% 200%",animation:"shimmer 4s ease infinite"}}>كوتش الاء محمد</h1></FadeIn>
     <FadeIn delay={0.25}><p style={{fontSize:22,color:"#e8618c",margin:"16px 0 0",fontWeight:700,fontFamily:"'Tajawal', sans-serif",letterSpacing:1}}>✦ كوتش الاء محمد — مدربة معتمدة بالأسواق المالية ✦</p></FadeIn>
+    <FadeIn delay={0.3}><p onClick={()=>setShowModal(true)} style={{fontSize:17,color:"#e8618c",margin:"12px 0 0",fontWeight:600,fontFamily:"'Tajawal', sans-serif",cursor:"pointer",transition:"opacity 0.3s",padding:"8px 24px",borderRadius:50,background:"rgba(232,97,140,0.08)",display:"inline-block",border:"1px solid rgba(232,97,140,0.2)"}} onMouseEnter={e=>e.currentTarget.style.background="rgba(232,97,140,0.15)"} onMouseLeave={e=>e.currentTarget.style.background="rgba(232,97,140,0.08)"}>📋 احجز استشارتك مع كوتش الاء</p></FadeIn>
     <FadeIn delay={0.35}><p style={{fontSize:18,color:"rgba(0,0,0,0.5)",margin:"20px auto 0",maxWidth:550,lineHeight:1.8}}>مستشارة وخبيرة في <strong style={{color:"#e8618c"}}>SB Model</strong> و<strong style={{color:"#e8618c"}}>X</strong><br/>مدربة معتمدة بالأسواق المالية وريادة الأعمال<br/>تداول • استثمار • تجارة إلكترونية • ريادة أعمال</p></FadeIn>
 
     <FadeIn delay={0.4}>
@@ -352,7 +353,7 @@ function Contact(){
       {showModal&&<BookingModal onClose={()=>setShowModal(false)}/>}
       <SectionTitle icon="📞" title="تواصل معنا" sub="نحن هنا لمساعدتك في أي وقت"/>
       <FadeIn><Card gold style={{padding:"36px 28px"}}>
-        <div style={{fontSize:36,textAlign:"center",marginBottom:12}}>👤</div>
+        <div style={{textAlign:"center",marginBottom:12}}><div style={{width:90,height:90,borderRadius:"50%",overflow:"hidden",border:"3px solid rgba(232,97,140,0.35)",margin:"0 auto",background:"rgba(232,97,140,0.05)"}}><img src="/images/coach-profile.jpg" alt="كوتش الاء محمد" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} onError={(e)=>{e.target.style.display="none";e.target.parentElement.innerHTML='<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:36px">👤</div>';}}/></div></div>
         <h4 style={{textAlign:"center",color:"#e8618c",fontSize:20,fontWeight:700,margin:"0 0 20px"}}>كوتش الاء محمد</h4>
         <div style={{display:"flex",justifyContent:"center",gap:14,marginBottom:24}}>
           <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" style={{width:52,height:52,borderRadius:16,background:"linear-gradient(135deg, #010101, #333)",display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",boxShadow:"0 4px 15px rgba(0,0,0,0.15)",textDecoration:"none"}}><TikTokIcon size={26}/></a>
