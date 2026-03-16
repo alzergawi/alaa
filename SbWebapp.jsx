@@ -81,7 +81,7 @@ function Hero({setActive}){const[showModal,setShowModal]=useState(false);return(
         padding:"0 16px",
         boxSizing:"border-box"
       }}>
-        <p style={{fontSize:15,color:"#e8618c",fontWeight:700,marginBottom:12,fontFamily:"'Tajawal', sans-serif",textAlign:"center"}}>🎬 تعرّفي على كوتش الاء محمد</p>
+        <p style={{fontSize:15,color:"#e8618c",fontWeight:700,marginBottom:12,fontFamily:"'Tajawal', sans-serif",textAlign:"center"}}>🎬 تعرفو على كوتش الاء محمد</p>
         <div style={{
           position:"relative",
           width:"100%",
