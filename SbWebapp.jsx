@@ -70,7 +70,7 @@ function Hero({setActive}){const[showModal,setShowModal]=useState(false);return(
     <FadeIn delay={0.05}><Badge>✦ مدربة معتمدة بالأسواق المالية وريادة الأعمال</Badge></FadeIn>
     <FadeIn delay={0.15}><h1 style={{fontSize:"clamp(36px, 7vw, 64px)",fontWeight:900,lineHeight:1.15,margin:"24px 0 0",fontFamily:"'Tajawal', sans-serif",background:"linear-gradient(135deg, #1a1a2e 0%, #e8618c 50%, #1a1a2e 100%)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundSize:"200% 200%",animation:"shimmer 4s ease infinite"}}>كوتش الاء محمد</h1></FadeIn>
     <FadeIn delay={0.25}><p style={{fontSize:22,color:"#e8618c",margin:"16px 0 0",fontWeight:700,fontFamily:"'Tajawal', sans-serif",letterSpacing:1}}>✦ كوتش الاء محمد — مدربة معتمدة بالأسواق المالية ✦</p></FadeIn>
-    <FadeIn delay={0.3}><p onClick={()=>setShowModal(true)} style={{fontSize:17,color:"#e8618c",margin:"12px 0 0",fontWeight:600,fontFamily:"'Tajawal', sans-serif",cursor:"pointer",transition:"opacity 0.3s",padding:"8px 24px",borderRadius:50,background:"rgba(232,97,140,0.08)",display:"inline-block",border:"1px solid rgba(232,97,140,0.2)"}} onMouseEnter={e=>e.currentTarget.style.background="rgba(232,97,140,0.15)"} onMouseLeave={e=>e.currentTarget.style.background="rgba(232,97,140,0.08)"}>📋 احجز استشارتك مع كوتش الاء</p></FadeIn>
+    <FadeIn delay={0.3}><button onClick={()=>setShowModal(true)} className="cta3d-btn">📋 احجز استشارتك مع كوتش الاء</button></FadeIn>
     <FadeIn delay={0.35}><p style={{fontSize:18,color:"rgba(0,0,0,0.5)",margin:"20px auto 0",maxWidth:550,lineHeight:1.8}}>مستشارة وخبيرة في <strong style={{color:"#e8618c"}}>SB Model</strong> و<strong style={{color:"#e8618c"}}>X</strong><br/>مدربة معتمدة بالأسواق المالية وريادة الأعمال<br/>تداول • استثمار • تجارة إلكترونية • ريادة أعمال</p></FadeIn>
 
     <FadeIn delay={0.4}>
@@ -414,6 +414,71 @@ function App(){
         @keyframes spinRing{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
         @media(max-width:768px){.nav-desktop{display:none !important;}.nav-mobile-toggle{display:block !important;}}
         @media(min-width:769px){.nav-mobile-menu{display:none !important;}}
+
+        /* 3D CTA Button */
+        .cta3d-btn {
+          margin-top: 16px;
+          padding: 14px 36px;
+          font-size: 17px;
+          font-weight: 700;
+          font-family: 'Tajawal', sans-serif;
+          color: #fff;
+          background: linear-gradient(135deg, #e8618c 0%, #d44a78 50%, #e8618c 100%);
+          background-size: 200% 200%;
+          border: none;
+          border-radius: 16px;
+          cursor: pointer;
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          box-shadow:
+            0 6px 0 #b03d62,
+            0 8px 20px rgba(232, 97, 140, 0.35),
+            inset 0 1px 0 rgba(255,255,255,0.25);
+          transform: translateY(0);
+          transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+          animation: btnShimmer 3s ease infinite, btnPulse 2.5s ease-in-out infinite;
+          letter-spacing: 0.5px;
+          overflow: hidden;
+          z-index: 1;
+        }
+        .cta3d-btn::before {
+          content: '';
+          position: absolute;
+          top: 0; left: -100%; width: 60%; height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          transform: skewX(-20deg);
+          transition: left 0.6s ease;
+          z-index: 2;
+        }
+        .cta3d-btn:hover::before {
+          left: 120%;
+        }
+        .cta3d-btn:hover {
+          transform: translateY(-3px);
+          box-shadow:
+            0 9px 0 #b03d62,
+            0 14px 35px rgba(232, 97, 140, 0.45),
+            inset 0 1px 0 rgba(255,255,255,0.3);
+          background-size: 100% 100%;
+        }
+        .cta3d-btn:active {
+          transform: translateY(4px);
+          box-shadow:
+            0 2px 0 #b03d62,
+            0 4px 10px rgba(232, 97, 140, 0.2),
+            inset 0 1px 0 rgba(255,255,255,0.15);
+          transition: all 0.06s ease;
+        }
+        @keyframes btnShimmer {
+          0%, 100% { background-position: 200% 50%; }
+          50% { background-position: 0% 50%; }
+        }
+        @keyframes btnPulse {
+          0%, 100% { box-shadow: 0 6px 0 #b03d62, 0 8px 20px rgba(232,97,140,0.35), inset 0 1px 0 rgba(255,255,255,0.25); }
+          50% { box-shadow: 0 6px 0 #b03d62, 0 8px 30px rgba(232,97,140,0.5), inset 0 1px 0 rgba(255,255,255,0.25); }
+        }
 
         iframe, video, img { max-width: 110% !important; box-sizing: border-box !important; }
         section { overflow: hidden; width: 100%; box-sizing: border-box; }
